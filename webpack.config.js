@@ -4,6 +4,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var Dashboard = require('webpack-dashboard');
 var DashboardPlugin = require('webpack-dashboard/plugin');
+var PurifyCSSPlugin = require('purifycss-webpack-plugin');
 
 var dashboard = new Dashboard();
 
@@ -68,7 +69,14 @@ module.exports = {
       template: './index.html',
       inject: true
     }),
-    new ExtractTextPlugin("styles.css")
+    new ExtractTextPlugin("styles.css"),
+    new PurifyCSSPlugin({
+      basePath: __dirname,
+      paths: [
+      "dist/index.html",
+    ],
+      purifyOptions: { info: true, minify: true }
+  })
   ]
 
 }

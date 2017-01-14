@@ -81,6 +81,13 @@ module.exports = {
       inject: true
     }),
     new ExtractTextPlugin("styles.css"),
+    new PurifyCSSPlugin({
+      basePath: __dirname,
+      paths: [
+      "dist/index.html",
+    ],
+      purifyOptions: { info: true, minify: true }
+  }),
     new webpack.DefinePlugin({
     'process.env': {
       'NODE_ENV': JSON.stringify('production')
