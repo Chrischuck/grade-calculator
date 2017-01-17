@@ -1,15 +1,16 @@
 {
   "name": "grade-calculator",
   "version": "1.0.0",
-  "description": "clean/modern website to calculate your final grade (with weights)",
+  "description": "Clean and modern website to calculate your final grade (with weights)",
   "main": "index.js",
   "scripts": {
-    "test": "npm run lint && npm run flow && npm run build",
-    "dev": "webpack-dev-server --hot --inline",
-    "build": "cross-env NODE_ENV=production webpack -p --config ./webpack.production.config.js",
-    "start": "node server.js",
+    "build": "NODE_ENV=production rm -rf dist && webpack -p --config webpack.production.config.js --inline --hot --progress --profile --colors",
+    "dev": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --hot --inline",
     "flow": "flow",
-    "lint": "eslint --cache --ignore-path .gitignore --format=node_modules/eslint-formatter-pretty ."
+    "lint": "eslint --cache --ignore-path .gitignore --format=node_modules/eslint-formatter-pretty .",
+    "postinstall": "npm run build",
+    "start": "node -r babel-register server.js",
+    "test": "npm run lint && npm run flow && npm run build"
   },
   "keywords": [
     "grade",
@@ -21,7 +22,7 @@
     "gpa"
   ],
   "author": "Chris Chuck",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "bootstrap": "^3.3.7",
     "preact": "^7.1.0",
@@ -35,15 +36,19 @@
     "babel-core": "^6.20.0",
     "babel-eslint": "^7.1.1",
     "babel-loader": "^6.2.9",
+    "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-closure-elimination": "^1.1.14",
+    "babel-plugin-syntax-flow": "^6.18.0",
     "babel-plugin-transform-class-properties": "^6.19.0",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-flow-strip-types": "^6.21.0",
     "babel-plugin-transform-object-rest-spread": "^6.20.2",
     "babel-plugin-transform-react-constant-elements": "^6.9.1",
     "babel-plugin-transform-react-inline-elements": "^6.8.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.2.11",
     "babel-plugin-transform-runtime": "^6.15.0",
     "babel-polyfill": "^6.20.0",
+    "babel-preset-env": "^1.1.8",
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
     "babel-preset-react-optimize": "^1.0.1",
@@ -67,10 +72,7 @@
     "html-webpack-plugin": "^2.24.1",
     "image-webpack-loader": "^3.1.0",
     "install": "^0.8.4",
-    "nodemon": "^1.11.0",
-    "npm": "^4.0.5",
     "offline-plugin": "^4.5.5",
-    "purifycss-webpack-plugin": "^2.0.3",
     "react-hot-loader": "^1.3.1",
     "static-site-generator-webpack-plugin": "^3.1.0",
     "style-loader": "^0.13.1",
@@ -82,41 +84,12 @@
     "webpack-dashboard": "^0.2.0",
     "webpack-dev-server": "^1.16.2"
   },
-  "babel": {
-    "presets": [
-      "stage-0",
-      "es2015",
-      "react"
-    ],
-    "env": {
-      "production": {
-        "presets": ["react-optimize"]
-      }
-    },
-    "plugins": [
-      "closure-elimination",
-      "transform-react-constant-elements",
-      "transform-react-remove-prop-types"
-    ]
+  "engines": {
+    "node": ">=4.x",
+    "npm": ">=3.x"
   },
-  "eslint": {
-    "extends": "airbnb",
-    "rules": {
-      "jsx-quotes": [
-        2,
-        "prefer-single"
-      ],
-      "react/jsx-curly-spacing": [
-        2,
-        "always"
-      ],
-      "react/prefer-stateless-function": [
-        0
-      ],
-      "arrow-body-style": [
-        "error",
-        "never"
-      ]
-    }
+  "devEngines": {
+    "node": ">=4.x",
+    "npm": ">=3.x"
   }
 }

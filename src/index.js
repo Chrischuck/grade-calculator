@@ -10,6 +10,8 @@ import GPARoute from './routes/gpa';
 import HomeRoute from './routes/home';
 import NotFoundRoute from './routes/notFound';
 
+console.log('asdfadfsfsfd');
+
 const routes = {
   path: '/',
   component: App,
