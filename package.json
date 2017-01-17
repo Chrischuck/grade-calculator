@@ -84,12 +84,8 @@
     "webpack-dashboard": "^0.2.0",
     "webpack-dev-server": "^1.16.2"
   },
-  "engines": {
-    "node": ">=4.x",
-    "npm": ">=3.x"
-  },
   "devEngines": {
-    "node": ">=4.x",
+    "node": ">=6.x",
     "npm": ">=3.x"
   }
 }
