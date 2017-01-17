@@ -1,3 +1,4 @@
+// @flow
 const GPARoute = {
   path: '/gpa-calculator',
   getComponents(location, callback) {

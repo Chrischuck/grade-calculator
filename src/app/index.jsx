@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'sweetalert/dist/sweetalert.css';

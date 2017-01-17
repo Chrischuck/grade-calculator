@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import sweetAlert from 'sweetalert/dist/sweetalert.min';
 import InputBox from './inputBox';

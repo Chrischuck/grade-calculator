@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 
 import picture from '../../../assets/cat1.jpg';

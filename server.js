@@ -1,3 +1,4 @@
+// @flow
 import path from 'path';
 import express from 'express';
 import compression from 'compression';
@@ -23,3 +24,8 @@ app.listen(PORT, error => (
         PORT,
     )),
 );
+
+
+function name(foo: string): void {
+  return 4444;
+}

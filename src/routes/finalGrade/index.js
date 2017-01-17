@@ -1,3 +1,4 @@
+// @flow
 const FinalGradeRoute = {
   path: 'grade-calculator',
   getComponents(location, callback) {

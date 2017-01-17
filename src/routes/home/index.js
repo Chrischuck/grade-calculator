@@ -1,3 +1,4 @@
+// @flow
 const HomeRoute = {
   getComponents(location, callback) {
     require.ensure([

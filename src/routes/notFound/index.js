@@ -1,3 +1,4 @@
+// @flow
 const NotFoundRoute = {
   path: '*',
   getComponents(location, callback) {
