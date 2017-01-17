@@ -7,7 +7,7 @@
     "build": "NODE_ENV=production rm -rf dist && webpack -p --config webpack.production.config.js --inline --hot --progress --profile --colors",
     "dev": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --hot --inline",
     "flow": "flow",
-    "lint": "eslint --cache --ignore-path .gitignore --format=node_modules/eslint-formatter-pretty .",
+    "lint": "eslint --ext .jsx --ext .js --cache --ignore-path .gitignore --format=node_modules/eslint-formatter-pretty .",
     "postinstall": "npm run build",
     "start": "node -r babel-register server.js",
     "test": "npm run lint && npm run flow && npm run build"
