@@ -1,8 +1,8 @@
-/* eslint-disable */
+/* eslint react/jsx-filename-extension: 0 */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
-import './manifest.json'
+import { Router, browserHistory } from 'react-router';
+import './manifest.json';
 import App from './app';
 
 import FinalGradeRoute from './routes/finalGrade';
@@ -22,6 +22,6 @@ const routes = {
 };
 
 ReactDOM.render(
-    <Router history={ browserHistory } routes={ routes } />,
-  document.getElementById('app')
+  <Router history={ browserHistory } routes={ routes } />,
+  document.getElementById('app'),
 );
