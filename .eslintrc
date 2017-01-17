@@ -1,6 +1,21 @@
 {
-  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "extends": [
+    "airbnb",
+    "plugin:flowtype/recommended",
+  ],
+  "env": {
+    "browser": true
+  },
+  "plugins": [
+    "compat",
+    "flowtype",
+    "flowtype-errors"
+  ],
   "rules": {
+    "compat/compat": 2,
+    "flowtype-errors/show-errors": 2,
+    "import/no-extraneous-dependencies": 0,
     "jsx-quotes": [2, "prefer-single"],
     "react/jsx-curly-spacing": [2, "always"],
     "react/prefer-stateless-function": [0]
