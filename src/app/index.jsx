@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Home from '../routes/home/components';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'sweetalert/dist/sweetalert.css';
+import './styles.css';
 
 import Header from '../components/header';
 

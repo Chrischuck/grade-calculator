@@ -273,7 +273,8 @@ export default class WeightedGrade extends React.Component {
                 onClick={ this.addCategory }
                 style={ {
                   backgroundColor: '#009688',
-                  fontSize: '2vh',
+                  fontSize: '1.5vh',
+                  color: 'white',
                 } }
               >
                   Add Category
@@ -292,7 +293,8 @@ export default class WeightedGrade extends React.Component {
                 onClick={ this.calculate }
                 style={ {
                   backgroundColor: '#009688',
-                  fontSize: '2vh',
+                  fontSize: '1.5vh',
+                  color: 'white',
                 } }
               >
                   Calculate

@@ -285,6 +285,7 @@ export default class GPA extends React.Component {
                   onClick={ this.addClass }
                   style={ {
                     backgroundColor: '#009688',
+                    color: 'white',
                   } }
                 >
                   Add Class
@@ -303,6 +304,7 @@ export default class GPA extends React.Component {
                   onClick={ this.showGpa }
                   style={ {
                     backgroundColor: '#009688',
+                    color: 'white',
                   } }
                 >
                   Calculate

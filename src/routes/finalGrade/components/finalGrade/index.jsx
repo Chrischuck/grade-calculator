@@ -226,6 +226,7 @@ export default class SimpleInput extends React.Component {
               onClick={ this.onCalculate }
               style={ {
                 backgroundColor: '#009688',
+                color: 'white',
               } }
             >
                 Calculate
