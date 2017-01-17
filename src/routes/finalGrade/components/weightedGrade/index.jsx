@@ -111,7 +111,6 @@ export default class WeightedGrade extends React.Component {
       });
       return;
     }
-    console.log(totalPercentage);
     if ((totalPercentage) !== 100) {
       swal({
         title: 'Oops!',
