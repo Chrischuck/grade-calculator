@@ -1,5 +1,6 @@
+// @flow
 import React from 'react';
-import sweetAlert from 'sweetalert/dist/sweetalert.min.js';
+import sweetAlert from 'sweetalert/dist/sweetalert.min';
 import InputBox from './inputBox';
 
 sweetAlert();
@@ -110,7 +111,6 @@ export default class WeightedGrade extends React.Component {
       });
       return;
     }
-    console.log(totalPercentage);
     if ((totalPercentage) !== 100) {
       swal({
         title: 'Oops!',

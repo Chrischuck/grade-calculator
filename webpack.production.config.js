@@ -1,11 +1,12 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 
 module.exports = {
   context: `${__dirname}/src`,
+
   entry: {
     app: './index.js',
     vendor: [
@@ -17,6 +18,7 @@ module.exports = {
       'preact-compat',
     ],
   },
+
   output: {
     path: `${__dirname}/dist`,
     filename: 'bundle.js',
@@ -29,6 +31,7 @@ module.exports = {
     },
     extensions: ['', '.js', '.jsx', '.json', '.css'],
   },
+
   module: {
     loaders: [
       { test: /\.jsx?$/, exclude: /node_modules/, loaders: ['babel-loader'] },
@@ -45,18 +48,10 @@ module.exports = {
         test: /\.js$/,
         exclude: [/node_modules/],
         loader: 'babel-loader',
-        options: {
-          presets: ['es2015', 'react', 'stage-0'],
-          plugins: [
-              ['transform-decorators-legacy'],
-              ['transform-runtime'],
-          ],
-        },
       },
-
-
     ],
   },
+
   plugins: [
     new webpack.NoErrorsPlugin(),
     new webpack.optimize.DedupePlugin(),
@@ -92,5 +87,4 @@ module.exports = {
     }),
     new BundleAnalyzerPlugin(),
   ],
-
 };

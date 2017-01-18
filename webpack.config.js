@@ -7,23 +7,18 @@ const DashboardPlugin = require('webpack-dashboard/plugin');
 const dashboard = new Dashboard();
 
 module.exports = {
-  /**
-   * Sets up entra and output code
-   */
   context: `${__dirname}/src`,
+
   entry: [
     'babel-polyfill',
     './index.js',
   ],
+
   output: {
     filename: 'app.js',
     path: `${__dirname}/dist`,
   },
 
-
-  /**
-   * Sets up loaders
-   */
   resolve: {
     alias: {
       react: 'preact-compat',
@@ -31,6 +26,7 @@ module.exports = {
     },
     extensions: ['', '.js', '.jsx', '.json', '.css'],
   },
+
   module: {
     loaders: [
       { test: /\.jsx?$/, exclude: /node_modules/, loaders: ['babel-loader'] },
@@ -47,13 +43,6 @@ module.exports = {
         test: /\.js$/,
         exclude: [/node_modules/],
         loader: 'babel-loader',
-        options: {
-          presets: ['es2015', 'react', 'stage-0'],
-          plugins: [
-              ['transform-decorators-legacy'],
-              ['transform-runtime'],
-          ],
-        },
       },
     ],
   },
@@ -74,5 +63,4 @@ module.exports = {
     }),
     new ExtractTextPlugin('styles.css'),
   ],
-
 };
