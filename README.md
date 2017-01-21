@@ -1,12 +1,15 @@
 # bare-minimum
+
+Live!: bareminimum.co
+
+100/100 on google lighthouse 🎉🎉
+
 Designed to help other college students get through college. Eventually we want to add donations(for charities!) as well as a few other cool features such as a word count to page length calculator or even a plagiarism checker! But for now, we're just working on better grade calculators and a gpa calculator.
 
-Things to do: Upgrade to webpack 2, purify css, better ui (material design??), Deploy!
+Things to do: Upgrade to webpack 2, better ux, better ui (material design??)!
 
 If you want to help out, just clone and do a little npm install and you're on your way!
 
-Home Page!
-![Home page](https://github.com/Chrischuck/bare-minimum/blob/master/src/assets/screenshots/home.png "Home Page")
 
 Simple Final Grade Calculator
 ![Final Grade](https://github.com/Chrischuck/bare-minimum/blob/master/src/assets/screenshots/finalGrade.png)
